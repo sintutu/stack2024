@@ -22,9 +22,9 @@ jobs:
         dotnet-version: 8.0.x
     - name: Restore dependencies
       run: dotnet restore
-    - name: Ensure browsers are installed
-      run: pwsh $GITHUB_WORKSPACE/test/ui.tests/bin/Debug/net8.0/playwright.ps1 install --with-deps
     - name: Build
       run: dotnet build --no-restore
+    - name: Ensure browsers are installed
+      run: pwsh $GITHUB_WORKSPACE/test/ui.tests/bin/Debug/net8.0/playwright.ps1 install --with-deps
     - name: Test
       run: dotnet test --no-build --verbosity normal
