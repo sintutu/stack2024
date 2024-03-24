@@ -1,18 +1,18 @@
-﻿namespace skills.models
+﻿namespace skills.models;
+
+/// <summary>
+/// Represents a software requirement.
+/// </summary>
+public class Requirement
 {
     /// <summary>
-    /// Represents a software requirement.
+    /// Gets or sets the title of the requirement.
     /// </summary>
-    public class Requirement
-    {
-        /// <summary>
-        /// Gets or sets the title of the requirement.
-        /// </summary>
-        public string Title { get; set; }
+    public string Title { get; set; }
 
-        /// <summary>
-        /// Gets or sets the list of test scenarios associated with the requirement.
-        /// </summary>
-        public List<Scenario> TestScenarios { get; set; }
-    }
+    /// <summary>
+    /// Gets or sets the list of test scenarios associated with the requirement.
+    /// </summary>
+    public List<Scenario> TestScenarios { get; set; }
 }
+
