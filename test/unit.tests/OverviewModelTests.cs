@@ -1,15 +1,18 @@
-using Microsoft.AspNetCore.Mvc.RazorPages;
+using FluentAssertions;
 using skills.models;
+using stack2024.Pages;
 
-namespace stack2024.Pages;
-public class OverviewModel : PageModel
+namespace unit.tests;
+
+[TestFixture]
+public class OverviewPageTests
 {
-    public List<Requirement> Requirements { get; set; }
-
-    public void OnGet()
+    [Test]
+    public void OnGet_WithData_ReturnsPage()
     {
-        // Populate dummy data
-        Requirements = new List<Requirement>
+        // Arrange
+        var model = new OverviewModel();
+        var dummyData = new List<Requirement>
         {
             new Requirement
             {
@@ -62,5 +65,13 @@ public class OverviewModel : PageModel
                 }
             }
         };
+        model.Requirements = dummyData;
+
+        // Act
+        model.OnGet();
+
+        // Assert
+        model.Page().Should().NotBeNull();
     }
 }
+
