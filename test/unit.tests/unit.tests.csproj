@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\skills.models\skills.models.csproj" />
+    <ProjectReference Include="..\..\src\ui\stack2024.csproj" />
   </ItemGroup>
 
 </Project>
