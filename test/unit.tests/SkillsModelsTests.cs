@@ -1,6 +1,4 @@
-using NUnit.Framework;
 using FluentAssertions;
-using System.Collections.Generic;
 using skills.models;
 
 namespace unit.tests;

@@ -1,9 +1,43 @@
 @page
-@model IndexModel
+@model OverviewModel
 @{
     ViewData["Title"] = "Overview";
 }
 
 <h1>Test Case Management Overview</h1>
 
-<!-- Add the diagram here -->
+<table class="table">
+    <thead>
+        <tr>
+            <th>Requirement</th>
+            <th>Scenario</th>
+            <th>Test Case</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var requirement in Model.Requirements)
+        {
+            <tr>
+                <td>@requirement.Title</td>
+                <td></td> <!-- Scenario will go here -->
+                <td></td> <!-- Test Case will go here -->
+            </tr>
+            foreach (var scenario in requirement.TestScenarios)
+            {
+                <tr>
+                    <td></td> <!-- Requirement will be empty for subsequent rows -->
+                    <td>@scenario.Title</td>
+                    <td></td> <!-- Test Case will go here -->
+                </tr>
+                foreach (var testCase in scenario.TestCases)
+                {
+                    <tr>
+                        <td></td> <!-- Requirement and Scenario will be empty for subsequent rows -->
+                        <td></td>
+                        <td>@testCase.Title</td>
+                    </tr>
+                }
+            }
+        }
+    </tbody>
+</table>
